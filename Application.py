@@ -28,7 +28,8 @@ def read_data():
                     mortgage_id = row[0]
                     mortgages[mortgage_id] = MortgageData(row[0], row[2], row[14], row[16], row[17], row[18])
 
-                print "Mortgage ID = " + str(mortgages[mortgage_id].borrower_id) + " = " + str(row[0])
+                print "Mortgage FICO = " + str(mortgages[mortgage_id].fico) + " = " + str(row[16])
+                print "Mortgage Interest Rate = " + str(mortgages[mortgage_id].interest_orig) + " = " + str(row[18])
                 observation = MortgageObservation(row[0], row[1], row[5], row[6], row[7], row[9], row[10], row[22])
                 mortgages[mortgage_id].add_observation(observation)
 
